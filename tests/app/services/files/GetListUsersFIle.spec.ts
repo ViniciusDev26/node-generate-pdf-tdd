@@ -1,21 +1,21 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { GetListUsersFile } from '../../../../src/app/services/files/GetListUsersFile'
+import { GetListUsersPdfService } from '../../../../src/app/services/files/GetListUsersPdf'
 import { InMemoryUserRepository } from '../../../../src/infra/db/inMemory/InMemoryUserRepository'
-import { GenerateListUsersFile } from '../../../../src/app/contracts/files/GenerateListUsersFile'
-import { GenerateListUsersFileTest } from '../../../mocks/files/GenerateListUsersFileTest'
+import { GenerateListUsersPdf } from '../../../../src/app/contracts/files/GenerateListUsersFile'
+import { GenerateListUsersPdfServiceTest } from '../../../mocks/files/GenerateListUsersPdfServiceTest'
 import { User } from '../../../../src/domain/entities/User'
 import { Profile } from '../../../../src/domain/valueObjects/Profile'
 
 describe('GetListUsersFile', () => {
   let inMemoryUserRepository: InMemoryUserRepository
-  let sut: GetListUsersFile
-  let generateListUsersFile: GenerateListUsersFile
+  let sut: GetListUsersPdfService
+  let generateListUsersFile: GenerateListUsersPdf
 
   beforeEach(() => {
     inMemoryUserRepository = new InMemoryUserRepository()
-    generateListUsersFile = new GenerateListUsersFileTest()
+    generateListUsersFile = new GenerateListUsersPdfServiceTest()
 
-    sut = new GetListUsersFile(inMemoryUserRepository, generateListUsersFile)
+    sut = new GetListUsersPdfService(inMemoryUserRepository, generateListUsersFile)
   })
 
   it('should call repositories correctly', async () => {

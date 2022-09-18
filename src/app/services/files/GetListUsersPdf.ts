@@ -1,10 +1,10 @@
-import { GenerateListUsersFile } from '../../contracts/files/GenerateListUsersFile'
+import { GenerateListUsersPdf } from '../../contracts/files/GenerateListUsersFile'
 import { ListAllUsersRepository } from '../../contracts/ListAllUsersRepository'
 
-export class GetListUsersFile {
+export class GetListUsersPdfService {
   constructor (
     private readonly listAllUsersRepository: ListAllUsersRepository,
-    private readonly generateListUsersFile: GenerateListUsersFile
+    private readonly generateListUsersFile: GenerateListUsersPdf
   ) {}
 
   async execute (): Promise<Buffer> {

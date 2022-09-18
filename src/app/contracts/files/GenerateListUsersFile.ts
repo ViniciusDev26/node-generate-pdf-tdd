@@ -1,5 +1,5 @@
 import { User } from '../../../domain/entities/User'
 
-export interface GenerateListUsersFile {
+export interface GenerateListUsersPdf {
   generate: (users: User[]) => Promise<Buffer>
 }

@@ -1,4 +1,4 @@
-import { GetListUsersFile } from '../../app/services/files/GetListUsersFile'
+import { GetListUsersPdfService } from '../../app/services/files/GetListUsersPdf'
 import { User } from '../../domain/entities/User'
 import { Profile } from '../../domain/valueObjects/Profile'
 import { InMemoryUserRepository } from '../../infra/db/inMemory/InMemoryUserRepository'
@@ -6,7 +6,7 @@ import { PdfKitGenerateListUsers } from '../../infra/files/pdfkit/PdfKitGenerate
 
 const generateListUsersFile = new PdfKitGenerateListUsers()
 const listAllUsersRepository = new InMemoryUserRepository()
-const getListUsersFileService = new GetListUsersFile(listAllUsersRepository, generateListUsersFile)
+const getListUsersFileService = new GetListUsersPdfService(listAllUsersRepository, generateListUsersFile)
 
 const userOne = new User({
   name: 'anyName',
